@@ -7,3 +7,6 @@
 
 ##Realtime 
 https://makeitmore.fun/smarthome/use-tasmota-with-real-time-clock-ds3231
+
+##Rule
+ON DHT11#Temperature>30 backlog do add1 1; var2 0 endon ON DHT11#Temperature>30 backlog DO IF (var1>60) power1 on; var1 0; var2 0 ENDIF ENDON ON DHT11#Temperature<30 backlog do add2 1; var1 0 endon ON DHT11#Temperature<30 backlog DO IF (var2>60) power1 off; var2 0; var1 0 ENDIF ENDONON Tele-DHT11#Temperature do backlog event checkdate=%timestamp% endon on event#checkdate$|-06T22 do backlog power1 0 endon
