@@ -1,7 +1,9 @@
 - SetOption36	Boot loop defaults restoration control.
     0 = disable boot loop control
 - WifiConfig 5 If your board is not getting any internet or Wi-Fi at all, change the WifiConfig to mode 5 to prevent restarting. Type below in Tasmota console and press enter
-
+- LED buildin: 
+    + Khai báo LED ở GPIO2
+    + set lệnh: LedState = 7 #7 = show power state and MQTT messages as a LED blink
 
 
 
