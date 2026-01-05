@@ -9,6 +9,19 @@ WifiConfig 5
     + Khai báo LED ở GPIO2
     + set lệnh: LedState = 7 #7 = show power state and MQTT messages as a LED blink
 
+##Display SSD1306
+Backlog DisplayModel 0; DisplayAddress 61; DisplayModel 2; DisplaySize 2; DisplayMode 1; Restart 1
+DisplayAddress 61: Thiết lập địa chỉ 0x3D (thập phân là 61).
+DisplayModel 2: Gán lại driver cho SSD1306.
+DisplaySize 2: Định dạng màn hình 128x64.
+Restart 1: Khởi động lại để hệ thống quét lại I2C từ đầu với cấu hình mới.
+I2CDriver: hiển thị driver I2C //index xem code 4=SSD1306, 3 LCD
+I2CDriver4 0: tắt driver
+
+-Độ sáng: DisplayDimmer 50 (Thay đổi từ 1 đến 100 để tiết kiệm pin/tuổi thọ OLED).
+Rule3 ON Power1#State=1 DO DisplayText [f2c1l2] ON ENDON ON Power1#State=0 DO DisplayText [f2c1l2] OFF ENDON
+Rule3 1
+
 
 
 ##Realtime 
